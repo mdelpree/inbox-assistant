@@ -3,28 +3,28 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Inbox Assistant</title>
-<meta name="description" content="A private, self-hosted assistant that sorts Gmail and reads Google Calendar for its owner.">
+<meta name="description" content="A private, self-hosted assistant that sorts and summarizes Gmail and, with its owner's approval, edits Google Calendar.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
   <h1>Inbox Assistant</h1>
-  <p>A private assistant that runs on its owner's own hardware. It is not a public service and has a single user.</p>
+  <p>A private assistant that runs on its owner's own hardware and is reached through a private Telegram bot. It is not a public service and has a single user.</p>
 
   <div class="card">
     <h2 style="margin-top:0">What it does</h2>
     <ul>
-      <li><strong>Gmail:</strong> moves likely junk out of the inbox into a label called "Probably junk". It never deletes email.</li>
-      <li><strong>Google Calendar:</strong> reads events to help plan the day (when enabled).</li>
+      <li><strong>Gmail:</strong> moves likely junk out of the inbox into a label called "Probably junk", and summarizes the emails that need the owner, on request and each morning. It never deletes or sends email.</li>
+      <li><strong>Google Calendar:</strong> reads events to help plan the day, and adds, moves or deletes events only after the owner approves each change. It never adds guests or sends invitations.</li>
     </ul>
   </div>
 
   <div class="card">
     <h2 style="margin-top:0">How your data is handled</h2>
     <ul>
-      <li>Processing happens on a local device with a local AI model. No email or calendar data is sent to third parties.</li>
-      <li>Only sender, subject, a short preview and a few headers are read, never full message bodies.</li>
-      <li>Only message ids and sorting decisions are stored.</li>
+      <li>Processing happens on a local device with a local AI model. Data leaves the device only to Google (the owner's own account) and Telegram, never to a cloud AI service.</li>
+      <li>Email text is read on the device for summaries. It is never stored by the mail tools, and it is deleted from the device's conversation history after 30 days. The sorter stores only message ids and sorting decisions.</li>
+      <li>Conversations go through Telegram, which is not end-to-end encrypted for bots. The device deletes its copy of conversations after 30 days.</li>
     </ul>
     <p>Full details: <a href="privacy.html">Privacy policy</a></p>
   </div>
